@@ -1,21 +1,38 @@
 package chapter7;
 
+import java.util.ArrayList;
+
 public class CustomerTest {
 	public static void main(String[] args) {
-		/*
-		Customer customerLee = new Customer();
-		customerLee.setCustomerName("이순신");
-		customerLee.setCustomerId(10010);
-		customerLee.setBonusPoint(1000);
+
+		ArrayList<Customer> customerList = new ArrayList<Customer>();
 		
-		System.out.println(customerLee.showCustomerInfo());
-		*/
+		Customer customerLee = new Customer(10010, "이순신");
+		Customer customerShin = new Customer(10010, "신사임당");
+		Customer customerHong = new GoldCustomer(10010, "홍길동");
+		Customer customerYul = new GoldCustomer(10010, "이율곡");
+		Customer customerKim = new VIPCustomer(10010, "김유신", 12345);
+
+		customerList.add(customerLee);
+		customerList.add(customerShin);
+		customerList.add(customerHong);
+		customerList.add(customerYul);
+		customerList.add(customerKim);
 		
-		VIPCustomer customerKim = new VIPCustomer();
-		customerKim.setCustomerName("김유신");
-		customerKim.setCustomerId(10020);
-		customerKim.setBonusPoint(10000);
+		System.out.println("=========고객 정보 출력=========");
 		
-		System.out.println(customerKim.showCustomerInfo());
+		for(Customer customer : customerList) {
+			System.out.println(customer.showCustomerInfo());
+		}
+
+		System.out.println("=========할인율과 보너스 포인트 계산=========");
+		
+		int price = 1000;
+		for(Customer customer : customerList) {
+			int cost = customer.calcPrice(price);
+			System.out.println(customer.getCustomerName() + " 님이 " + cost + "원을 지불하셨습니다.");
+			System.out.println(customer.getCustomerName() + " 님의 현재 보너스 포인트는" + customer.getBonusPoint() + "점 입니다.");
+		}
+		
 	}
 }
