@@ -1,6 +1,6 @@
 package chapter7.polymorphism;
 
-import java.util.ArrayList;import com.sun.org.apache.bcel.internal.generic.INSTANCEOF;
+import java.util.ArrayList;
 
 class Animal {
 	public void move() {
