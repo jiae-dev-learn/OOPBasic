@@ -1,4 +1,4 @@
-package chapter10.generic;
+package chapter11.generic;
 
 public class Powder extends Material{
 	@Override

@@ -1,4 +1,4 @@
-package chapter10.generic;
+package chapter11.generic;
 
 public class GenericPrinterTest {
 	public static void main(String[] args) {
