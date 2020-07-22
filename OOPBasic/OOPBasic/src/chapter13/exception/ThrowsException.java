@@ -16,7 +16,7 @@ public class ThrowsException {
 	public static void main(String[] args) {
 		ThrowsException test = new ThrowsException();
 		try {
-			test.loadClass("a.txt", "java.lang.String");
+			test.loadClass("files/a.txt", "java.lang.String");
 		} catch (FileNotFoundException e) {
 			System.out.println(e.toString());
 		} catch (ClassNotFoundException e) {
